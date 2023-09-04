@@ -36,7 +36,7 @@ export const Category = () => {
                         rowCategory.map((row) => {
                             return (
                                 <ul key={row.id}>
-                                    <ItemCategoria to={`/${row.name}`} state={row.name}>{row.name}</ItemCategoria>
+                                    <ItemCategoria to={`/To-Do-Task/${row.name}`} state={row.name}>{row.name}</ItemCategoria>
                                 </ul>
                             );
                         })
@@ -77,6 +77,11 @@ const ItemCategoria = styled(NavLink)`
         color: white;
         outline: none;
     }
+    @media(max-width: 40rem){
+        height: 2rem;
+        padding: 0 1rem;
+        align-items: center;
+    }
 `;
 
 const ContainerRows = styled.div`
@@ -90,6 +95,18 @@ const ContainerRows = styled.div`
         display: flex;
         justify-content: space-between;
     }
+
+    @media(max-width: 40rem){
+        display: flex;
+        flex-direction: row;
+        overflow: auto;
+        padding: 1rem 0;
+        width: 100%;
+        justify-content: center;
+    }
+    @media(max-width: 25rem){
+        justify-content: start;
+    }
 `;
 
 const CategoryContainer = styled.div`
@@ -101,9 +118,22 @@ const CategoryContainer = styled.div`
     flex-direction: column;
     gap: 1rem;
     aling-items: end;
+    
+    @media(max-width: 40rem){
+        min-width: 20rem;
+        border-radius: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
 `;
 
 const Container = styled.div`
     grid-area: aside;
     padding: 2rem;
+    @media(max-width: 40rem){
+        min-width: 15rem;
+        height: 10rem;
+        padding: 0;
+    }
 `;

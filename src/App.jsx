@@ -10,7 +10,7 @@ function App() {
         <Category />
         <Routes>
           <Route
-            path='/:category'
+            path='/To-Do-Task/:category'
             element={<Tasks />}
           />
         </Routes>
@@ -28,6 +28,15 @@ const Container = styled.div`
   gap: 2rem;
   width: auto;
   height: 100%;
+
+  @media(max-width: 40rem){
+    grid-template-rows: .5fr 2fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "aside"
+      "main";
+    gap: 0;
+  }
 `;
 
 export default App;
